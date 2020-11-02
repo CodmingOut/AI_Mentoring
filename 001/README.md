@@ -59,3 +59,29 @@
 - 연관 규칙 학습
     - 어프라이어리
     - 이클렛
+
+## 준지도 학습
+
+간단히 말하면 지도학습과 비지도학습을 결합한 학습이다.
+
+레이블이 있는 데이터와 없는 데이터 모두를 사용하여 예측에 사용한다.
+
+### 사용되는 알고리즘
+- Deep Belief Network[DBN] (심층 신뢰 신경망)
+- Restricted Boltzmann Machine[RBM] (제한된 볼츠만 머신)
+
+## 강화학습 (Reinforcement Learning)
+
+학습하는 시스템을 에이전트라고 부르며 환경(environment)을 관찰해서 행동(action)을 실행하고 그 결과로 보상(reward)을 받는다.
+
+시간이 지나면서 가장 큰 보상을 얻기 위해 정책(policy)이라고 부르는 최상의 전략을 스스로 학습한다.
+
+<img width="625" alt="001-4" src="https://user-images.githubusercontent.com/63298243/97890765-491bca00-1d71-11eb-98f0-d256920c8d11.png">
+
+
+### 사용되는 알고리즘
+- Deep Q-Networks[DQN]
+- Double DQN
+- actor-critic (액터-크리틱 알고리즘)
+- Asynchronous Advantage actor-critic (A3C)
+- Soft actor-critic (SAC)
