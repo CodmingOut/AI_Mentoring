@@ -1,4 +1,4 @@
-# 머신러닝 시스템의 종류
+# 머신러닝의 종류
 
 ## 지도학습
 
@@ -23,7 +23,9 @@
     - 분류는 class를 예측하므로 결과값이 확률로 주어짐 (0~1사이)
     - 회귀는 확률을 예측하는 것이 아님. 값들의 연속성이 있고, 그 연속성 중에 어디에 점을 찍을지 결정하는 것
 
-### 사용되는 알고리즘
+
+
+#### 사용되는 알고리즘
 - K-nearest neighbors (K-최근접 이웃)
 - linear regression (선형 회귀)
 - logistic regression (로지스틱 회귀)
@@ -33,11 +35,12 @@
 
 
 
+
 ## 비지도 학습
 
 비지도 학습은 지도학습과는 반대로 훈련 데이터에 레이블이 없다.
 
-### 사용되는 알고리즘
+#### 사용되는 알고리즘
 - 군집
     - K-means (K-평균)
     - DBSCAN
@@ -66,7 +69,7 @@
 
 레이블이 있는 데이터와 없는 데이터 모두를 사용하여 예측에 사용한다.
 
-### 사용되는 알고리즘
+#### 사용되는 알고리즘
 - Deep Belief Network[DBN] (심층 신뢰 신경망)
 - Restricted Boltzmann Machine[RBM] (제한된 볼츠만 머신)
 
@@ -79,7 +82,7 @@
 <img width="625" alt="001-4" src="https://user-images.githubusercontent.com/63298243/97890765-491bca00-1d71-11eb-98f0-d256920c8d11.png">
 
 
-### 사용되는 알고리즘
+#### 사용되는 알고리즘
 - Deep Q-Networks[DQN]
 - Double DQN
 - actor-critic (액터-크리틱 알고리즘)
