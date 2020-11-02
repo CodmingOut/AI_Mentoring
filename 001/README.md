@@ -16,8 +16,44 @@
     - 지하철 역과의 거리, 일정 거리안의 관공서, 마트, 학군의 수 등등 여러 feature들로 어떤 지역의 땅값을 예측하는 문제
     - 누군가의 키와 몸무게를 예측하는 문제
 
+![001-1](https://user-images.githubusercontent.com/63298243/97887533-664e9980-1d6d-11eb-976b-a7b0691c410d.png)
+
 
 - 분류와 회귀의 구분법
     - 분류는 class를 예측하므로 결과값이 확률로 주어짐 (0~1사이)
-    - 회귀는 확률을 예측하는 것이 아니다. 값들의 연속성이 있고, 그 연속성 중에 어디에 점을 찍을지 결정하는 문제
+    - 회귀는 확률을 예측하는 것이 아님. 값들의 연속성이 있고, 그 연속성 중에 어디에 점을 찍을지 결정하는 것
+
+### 사용되는 알고리즘
+- K-nearest neighbors (K-최근접 이웃)
+- linear regression (선형 회귀)
+- logistic regression (로지스틱 회귀)
+- Support Vector Machine[SVM] (서포트 벡터 머신)
+- decision tree & random forest (결정트리 & 랜덤 포레스트)
+- neural networks (신경망)
+
+
+
+## 비지도 학습
+
+비지도 학습은 지도학습과는 반대로 훈련 데이터에 레이블이 없다.
+
+### 사용되는 알고리즘
+- 군집
+    - K-means (K-평균)
+    - DBSCAN
+    - HCA (계층 군집 분석)
+    - 이상치 탐지와 특이치 탐지
+    - one-class SVM (원-클래스)
+    - isolation forest
+
+- 시각화와 차원축소
+    - PCA (주성분 분석)
+    - Kernel PCA
+    - LLE (지역적 선형 임베딩)
+    - t-SNE
+
+- 연관 규칙 학습
+    - 어프라이어리
+    - 이클렛
+
 
