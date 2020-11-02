@@ -45,15 +45,17 @@
     - 이상치 탐지와 특이치 탐지
     - one-class SVM (원-클래스)
     - isolation forest
+![001-2](https://user-images.githubusercontent.com/63298243/97889616-eaa21c00-1d6f-11eb-85c4-d69104891410.png)
+<군집 이미지>
 
 - 시각화와 차원축소
     - PCA (주성분 분석)
     - Kernel PCA
     - LLE (지역적 선형 임베딩)
     - t-SNE
+<img width="625" alt="001-3" src="https://user-images.githubusercontent.com/63298243/97889626-ed047600-1d6f-11eb-80c0-ea1edb9a0fa7.png">
+<t-SNE를 이용해 시각화>
 
 - 연관 규칙 학습
     - 어프라이어리
     - 이클렛
-
-
