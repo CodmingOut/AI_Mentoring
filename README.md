@@ -11,3 +11,5 @@
 |ID|Title|Description|
 |:---:|:---|:---|
 |1|[머신러닝의 종류](./001/README.md)|지도학습, 비지도학습, 강화학습, 준지도학습에 대한 설명|
+|2|[단순회귀분석](./002/Simple_linear_regression.ipynb)|단순회귀분석에 대한 설명|
+|1|[다항회귀분석](./003/Polynomial_regression.ipynb)|다항회귀분석에 대한 설명|
