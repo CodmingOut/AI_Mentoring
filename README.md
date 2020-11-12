@@ -16,3 +16,4 @@
 |4|[다중회귀분석](./004/multivariate_regression.ipynb)|다중회귀분석에 대한 설명|
 |5|[KNN](./005/knn_classification.ipynb)|KNN에 대한 설명|
 |6|[SVM](./006/svm_classification.ipynb)|SVM에 대한 설명|
+|7|[DecisionTree](./007/decision_tree.ipynb)|DecisionTree에 대한 설명|
