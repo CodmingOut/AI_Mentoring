@@ -17,5 +17,5 @@
 |5|[KNN](./005/knn_classification.ipynb)|KNN에 대한 설명|
 |6|[SVM](./006/svm_classification.ipynb)|SVM에 대한 설명|
 |7|[DecisionTree](./007/decision_tree.ipynb)|DecisionTree에 대한 설명|
-|8|[RandomForest](./007/random_forest.ipynb)|RandomForest에 대한 설명|
-|9|[k-Means](./007/k_Means.ipynb)|k-Means에 대한 설명|
+|8|[RandomForest](./008/random_forest.ipynb)|RandomForest에 대한 설명|
+|9|[k-Means](./009/k_Means.ipynb)|k-Means에 대한 설명|
