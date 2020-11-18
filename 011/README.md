@@ -1,5 +1,5 @@
 
-https://github.com/cpprhtn/Cppthrn-s_Deep_Learning의 내용을 수정 & 가공하며 재구성시킬 예정
+https://github.com/cpprhtn/Cppthrn-s_Deep_Learning 의 내용을 수정 & 가공하며 재구성시킬 예정
 
 
 # 머신러닝과 딥러닝
