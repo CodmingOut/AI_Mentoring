@@ -35,6 +35,7 @@ model.add(Activation('relu'))           # Activation 층을 추가합니다.
 - `input_shape` 인자는 입력 값의 크기와 시계열 입력의 길이를 포괄합니다. 따라서 `Dense`와 같이 2D 처리를 하는 층의 경우 `input_shape` 대신에 `input_dim` 인자를 통해서도 입력 크기를 지정할 수 있으며, 시계열과 같이 3D 처리를 하는 층은 `input_dim`과 `input_length`의 두 인자를 사용해서 입력 차원의 크기와 시계열 길이를 각각 지정할 수 있습니다.
 - 배치 크기를 고정해야 하는 경우 `batch_size` 인자를 사용합니다(순환 신경망<sub>Recurrent Neural Network</sub>과 같이 현 시점의 결과를 저장하여 다음 시점으로 넘기는 처리를 하는 경우 배치 크기 고정이 필요합니다). 예를 들어, `batch_size=32`와 `input_shape=(6, 8)`을 층에 입력하면 이후의 모든 입력을 `(32, 6, 8)`의 형태로 처리합니다.
 
+
 이에 따라, 아래의 두 코드는 완전히 동일하게 작동합니다.
 ```python
 model = Sequential()
@@ -51,23 +52,23 @@ model.add(Dense(32, input_dim=784))         # input_dim을 이용하여 입력 �
 
 모델을 학습시키기 전에 `compile` 메소드를 통해서 학습과정의 세부 사항을 설정합니다. `compile` 메소드는 다음 세 개의 인자를 입력받습니다.
 
-- 최적화 함수<sub>optimizer</sub>: 기존의 최적화 함수를(예: `rmsprop`, `adagrad` 등) 문자열로 된 식별자<sub>identifier</sub>를 통해 불러오거나 `Optimizer` 클래스의 인스턴스를 만들어서 사용할 수 있습니다. 
+- 최적화 함수<sub>optimizer</sub>: 기존의 최적화 함수를(예: `Adam`, `adagrad` 등) 문자열로 된 식별자<sub>identifier</sub>를 통해 불러오거나 `Optimizer` 클래스의 인스턴스를 만들어서 사용할 수 있습니다. 
 - 손실 함수<sub>loss function</sub>: 모델이 학습을 통해 최소화하고자 하는 목적 함수<sub>objective function</sub>입니다. 이 또한 기존 손실 함수의 문자열 식별자(예: `categorical_crossentropy`, `mse` 등)를 입력하거나 별도의 목적 함수를 지정하여 사용할 수 있습니다.
 - 평가 지표<sub>metric</sub> 리스트: 모델의 성능을 평가할 지표를 리스트 형식으로 입력합니다. 예컨대 분류문제라면 `metrics=['accuracy']`를 통해 정확도<sub>accuracy</sub>를 산출할 수 있습니다. 평가 지표는 기존 지표 함수를 문자열 식별자로 불러오거나 사용자가 함수를 정의하여 지정할 수 있습니다. 
 
 ```python
 # 다중 분류 문제 예시 
-model.compile(optimizer='rmsprop',
+model.compile(optimizer='Adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 # 이진 분류 문제 예시
-model.compile(optimizer='rmsprop',
+model.compile(optimizer='Adam',
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
 # 회귀분석에 사용할 평균 제곱근 오차 계산
-model.compile(optimizer='rmsprop',
+model.compile(optimizer='Adam',
               loss='mse')
 
 # 사용자 정의 평가 지표 예시
@@ -76,7 +77,7 @@ import keras.backend as K
 def mean_pred(y_true, y_pred):                  # y_true와 y_pred 두 개의 인자를 받는 지표 함수 mean_pred를 정의합니다.
     return K.mean(y_pred)                       # y_pred의 평균값을 반환합니다. 
 
-model.compile(optimizer='rmsprop',
+model.compile(optimizer='Adam',
               loss='binary_crossentropy',
               metrics=['accuracy', mean_pred])  # metrics에 'accuracy'와 앞서 정의한 mean_pred를 리스트 형식으로 입력합니다.
 ```
@@ -93,7 +94,7 @@ model.compile(optimizer='rmsprop',
 model = Sequential()
 model.add(Dense(32, activation='relu', input_dim=100))      # 입력 100차원, 출력 32차원에 'relu' 함수를 적용하는 Dense 층입니다.
 model.add(Dense(1, activation='sigmoid'))                   # 1차원 출력에 'sigmoid' 함수를 적용하는 Dense 층입니다.
-model.compile(optimizer='rmsprop',                          # 최적화 함수 = 'rmsprop'
+model.compile(optimizer='Adam',                          # 최적화 함수 = 'Adam'
               loss='binary_crossentropy',                   # 손실 함수 = 'binary_crossentropy'
               metrics=['accuracy'])                         # 평가 지표 = 'accuracy'
 
@@ -112,7 +113,7 @@ model.fit(data, labels, epochs=10, batch_size=32)           # 생성된 데이�
 model = Sequential()
 model.add(Dense(32, activation='relu', input_dim=100))      
 model.add(Dense(10, activation='softmax'))                  # 10 출력에 'sigmoid' 함수를 적용하는 Dense 층입니다.
-model.compile(optimizer='rmsprop',
+model.compile(optimizer='Adam',
               loss='categorical_crossentropy',              # 손실 함수 = 'categorical_crossentropy'
               metrics=['accuracy'])
 
@@ -202,7 +203,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
+              optimizer='Adam',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train,
@@ -271,7 +272,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
+              optimizer='Adam',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, batch_size=16, epochs=10)
@@ -299,7 +300,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
+              optimizer='Adam',
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, batch_size=16, epochs=10)
@@ -332,7 +333,7 @@ model.add(LSTM(32))                                 # 32 차원의 단일 벡터
 model.add(Dense(10, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy',
-              optimizer='rmsprop',
+              optimizer='Adam',
               metrics=['accuracy'])
 
 # 예제를 위한 더미 훈련 데이터 생성
@@ -376,7 +377,7 @@ model.add(LSTM(32, stateful=True))
 model.add(Dense(10, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy',
-              optimizer='rmsprop',
+              optimizer='Adam',
               metrics=['accuracy'])
 
 # 예제를 위한 더미 훈련 데이터 생성
@@ -391,3 +392,39 @@ model.fit(x_train, y_train,
           batch_size=batch_size, epochs=5, shuffle=False,
           validation_data=(x_val, y_val))
 ```
+
+
+
+
+## 추가 설명
+
+### batch_size
+X 데이터가 문제집, y 데이터가 답지라 가정했을때 batch_size는 몇문제를 풀고 답지와 비교할 것인지를 나타내는 것입니다.
+```Py
+X = 100
+batch_size = 1
+```
+> 한 문제씩 풀고 답지와 비교하며 풀이
+한 문제씩 풀면서 가중치(W)를 갱신하는 방법인데, 총 100문제를 풀면서 100번을 갱신하게 됩니다.
+
+```Py
+X = 100
+batch_size = 10
+```
+> 10 문제씩 풀고 답지와 비교하며 풀이
+10 문제씩 풀면서 가중치(W)를 갱신하는 방법인데, 총 100문제를 풀면서 10번을 갱신하게 됩니다.
+
+
+batch_size가 작을수록 가중치 갱신이 자주되며 이는 더 좋은 정확도를 가져오는 경우가 크지만 그만큼 학습시간이 오래 걸립니다.
+반면에 batch_size가 클수록 정확도는 상대적으로 떨어지겠지만 시간적 효율성이 높아짐을 기대할 수 있습니다.
+적절한 batch_size로 시작하여 모델의 정확도를 높일때 조금씩 줄여나가는 방법을 권장합니다.
+
+
+### epochs
+epochs는 문제집의 권 수를 의미합니다.
+X=100일 경우, 이 100문항의 문제들을 몇번 풀것인가를 나타냅니다.
+
+일반적으로 여러번 반복해서 풀면 정확도가 올라가겠지만, 적정선을 넘은 epochs에서는 Overfitting(오버피팅)이 일어날 수 있습니다.
+같은 문제집을 여러번 풀다보면 문제 번호만 보고도 답을 맞추는 등의 상황(Overfitting)이 나오기 때문입니다.
+
+> Overfitting(오버피팅) : 훈련 데이터에만 익숙해져서 외부에서 들어오는 새로운 값에 대한 정확도가 떨어지는 상황
