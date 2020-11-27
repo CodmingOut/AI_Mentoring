@@ -4,7 +4,7 @@
 
 아래와 같이 각 층 인스턴스를 리스트 형식으로 나열하여 생성자<sub>constructor</sub>인 `Sequential`로 넘겨주면 모델이 만들어집니다.
 
-```python
+```py
 from keras.models import Sequential             # Sequential 생성자를 불러옵니다.
 from keras.layers import Dense, Activation      # Dense와 Activation 두 층 인스턴스를 불러옵니다.
 
@@ -19,7 +19,7 @@ model = Sequential([
 
 각 층을 리스트 형식으로 입력하는 방법 외에도, `Sequential` 생성자로 만든 모델에 `.add()` 메소드를 사용하면 손쉽게 새 층을 덧붙일 수 있습니다.
 
-```python
+```py
 model = Sequential()                    # 먼저 Sequential 생성자를 이용하여 빈 모델을 만들고,
 model.add(Dense(32, input_dim=784))     # Dense 층을 추가하고,
 model.add(Activation('relu'))           # Activation 층을 추가합니다.
@@ -37,11 +37,11 @@ model.add(Activation('relu'))           # Activation 층을 추가합니다.
 
 
 이에 따라, 아래의 두 코드는 완전히 동일하게 작동합니다.
-```python
+```py
 model = Sequential()
 model.add(Dense(32, input_shape=(784,)))    # input_shape를 이용하여 입력 차원(input_dim)을 768로 지정
 ```
-```python
+```py
 model = Sequential()
 model.add(Dense(32, input_dim=784))         # input_dim을 이용하여 입력 차원을 768로 지정
 ```
@@ -56,7 +56,7 @@ model.add(Dense(32, input_dim=784))         # input_dim을 이용하여 입력 �
 - 손실 함수<sub>loss function</sub>: 모델이 학습을 통해 최소화하고자 하는 목적 함수<sub>objective function</sub>입니다. 이 또한 기존 손실 함수의 문자열 식별자(예: `categorical_crossentropy`, `mse` 등)를 입력하거나 별도의 목적 함수를 지정하여 사용할 수 있습니다.
 - 평가 지표<sub>metric</sub> 리스트: 모델의 성능을 평가할 지표를 리스트 형식으로 입력합니다. 예컨대 분류문제라면 `metrics=['accuracy']`를 통해 정확도<sub>accuracy</sub>를 산출할 수 있습니다. 평가 지표는 기존 지표 함수를 문자열 식별자로 불러오거나 사용자가 함수를 정의하여 지정할 수 있습니다. 
 
-```python
+```py
 # 다중 분류 문제 예시 
 model.compile(optimizer='Adam',
               loss='categorical_crossentropy',
@@ -88,7 +88,7 @@ model.compile(optimizer='Adam',
 
 케라스 모델들은 데이터와 레이블로 구성된 NumPy 배열을 입력받아 학습합니다. 모델의 학습에는 일반적으로 `fit` 함수를 사용합니다.
 
-```python
+```py
 # 하나의 데이터를 입력받아 두 개의 클래스로 분류하는 이진 분류 모델의 경우:
 
 model = Sequential()
@@ -107,7 +107,7 @@ labels = np.random.randint(2, size=(1000, 1))               # 0 또는 1의 값�
 model.fit(data, labels, epochs=10, batch_size=32)           # 생성된 데이터를 32개씩의 배치로 나누어 전체를 총 10회 학습시킵니다.
 ```
 
-```python
+```py
 # 하나의 데이터를 입력받아 열 개의 클래스로 분류하는 다중 분류 모델의 경우:
 
 model = Sequential()
@@ -147,7 +147,7 @@ model.fit(data, one_hot_labels, epochs=10, batch_size=32)
 
 ### 다중 소프트맥스 분류<sub>Multi-class Softmax Classification</sub>를 위한 다층 신경망(MLP)
 
-```python
+```py
 import keras
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
@@ -184,7 +184,7 @@ score = model.evaluate(x_test, y_test, batch_size=128)
 
 ### 이진 분류<sub>Binary Classification</sub>를 위한 다층 신경망(MLP)
 
-```python
+```py
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
@@ -215,7 +215,7 @@ score = model.evaluate(x_test, y_test, batch_size=128)
 
 ### VGG 유형의 합성곱 신경망
 
-```python
+```py
 import numpy as np
 import keras
 from keras.models import Sequential
@@ -257,7 +257,7 @@ score = model.evaluate(x_test, y_test, batch_size=32)
 
 ### LSTM을 사용한 순서형<sub>sequence</sub> 데이터의 분류
 
-```python
+```py
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.layers import Embedding
@@ -281,7 +281,7 @@ score = model.evaluate(x_test, y_test, batch_size=16)
 
 ### 1차원 합성곱<sub>1D Convolution</sub>을 활용한 순서형 데이터 분류
 
-```python
+```py
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.layers import Embedding
@@ -315,7 +315,7 @@ score = model.evaluate(x_test, y_test, batch_size=16)
 
 <img src="https://keras.io/img/regular_stacked_lstm.png" alt="stacked LSTM" style="width: 300px;"/>
 
-```python
+```py
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import numpy as np
@@ -354,7 +354,7 @@ model.fit(x_train, y_train,
 
 상태 저장 순환 신경망<sub>stateful Recurrent Model</sub>은 입력된 배치를 처리하여 얻은 내부 상태(메모리)를 다음 배치의 초기 상태로 재사용합니다. 이를 통해서 계산 복잡도가 지나치게 높지 않게끔 유지하면서 보다 긴 시퀀스를 처리할 수 있도록 합니다. (예를 들어, 하나의 매우 긴 시계열을 보다 짧은 시계열 길이로 쪼갠 뒤 연속된 배치로 바꾸어 처리하는 경우를 생각해볼 수 있습니다. 이 경우 상태 저장 옵션은 이전 배치의 결과를 다음 배치로 연결해주기 때문에 서로 다른 배치가 마치 하나의 시계열로 이어진 것과 같은 효과를 냅니다.) 
 
-```python
+```py
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import numpy as np
