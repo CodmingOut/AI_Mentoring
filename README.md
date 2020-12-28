@@ -10,29 +10,29 @@
 
 |ID|Title|Description|
 |:---:|:---|:---|
-|1|[머신러닝의 종류](./001/README.md)|지도학습, 비지도학습, 강화학습, 준지도학습에 대한 설명|
+|1|[머신러닝의 종류](./AI_class/001/README.md)|지도학습, 비지도학습, 강화학습, 준지도학습에 대한 설명|
 |*|지도학습||
-|2|[단순회귀분석](./002/Simple_linear_regression.ipynb)|단순회귀분석에 대한 설명|
-|3|[다항회귀분석](./003/Polynomial_regression.ipynb)|다항회귀분석에 대한 설명|
-|4|[다중회귀분석](./004/multivariate_regression.ipynb)|다중회귀분석에 대한 설명|
-|5|[KNN](./005/knn_classification.ipynb)|KNN에 대한 설명|
-|6|[SVM](./006/svm_classification.ipynb)|SVM에 대한 설명|
+|2|[단순회귀분석](./AI_class/002/Simple_linear_regression.ipynb)|단순회귀분석에 대한 설명|
+|3|[다항회귀분석](./AI_class/003/Polynomial_regression.ipynb)|다항회귀분석에 대한 설명|
+|4|[다중회귀분석](./AI_class/004/multivariate_regression.ipynb)|다중회귀분석에 대한 설명|
+|5|[KNN](./AI_class/005/knn_classification.ipynb)|KNN에 대한 설명|
+|6|[SVM](./AI_class/006/svm_classification.ipynb)|SVM에 대한 설명|
 |*|CART(분류, 회귀 둘다 가능)||
-|7|[DecisionTree](./007/decision_tree.ipynb)|DecisionTree에 대한 설명|
-|8|[RandomForest](./008/random_forest.ipynb)|RandomForest에 대한 설명|
+|7|[DecisionTree](./AI_class/007/decision_tree.ipynb)|DecisionTree에 대한 설명|
+|8|[RandomForest](./AI_class/008/random_forest.ipynb)|RandomForest에 대한 설명|
 |*|비지도학습||
-|9|[k-Means](./009/k_Means.ipynb)|k-Means에 대한 설명|
-|10|[DBSCAN](./010/DBSCAN.ipynb)|DBSCAN에 대한 설명|
+|9|[k-Means](./AI_class/009/k_Means.ipynb)|k-Means에 대한 설명|
+|10|[DBSCAN](./AI_class/010/DBSCAN.ipynb)|DBSCAN에 대한 설명|
 |*|신경망||
-|11|[머신러닝과 딥러닝](./011/README.md)|머신러닝과 딥러닝, ANN에 대한 설명|
-|12|[퍼셉트론](./012/README.md)|퍼셉트론 개념 설명|
-|13|[활성화함수1](./013/README.md)|활성화 함수 설명1|
-|14|[활성화함수2](./014/README.md)|활성화 함수 설명2|
-|15|[신경망 연산방법](./015/README.md)|신경망 연산방법 설명|
-|16|[신경망 구현](./016/README.md)|신경망 파이썬으로 구현해보기|
-|17|[신경망 계산](./017/README.md)|신경망 계산해보기|
-|18|[손실함수](./018/README.md)|cost function 설명|
-|19|[경사하강법](./019/README.md)|경사하강법 설명|
-|20|[Keras 모델 사용방법](./020/README.md)|케라스 라이브러리를 이용해 딥러닝 모델 생성하는 방법 알아보기|
-|21|[Dnn 실습](./021/Dnn.ipynb)|이제까지 배운 방법을 통해서 딥러닝 모델로 제작|
-|22|[Dnn 실습2](./022/Dnn2.ipynb)|실습 2|
+|11|[머신러닝과 딥러닝](./AI_class/011/README.md)|머신러닝과 딥러닝, ANN에 대한 설명|
+|12|[퍼셉트론](./AI_class/012/README.md)|퍼셉트론 개념 설명|
+|13|[활성화함수1](./AI_class/013/README.md)|활성화 함수 설명1|
+|14|[활성화함수2](./AI_class/014/README.md)|활성화 함수 설명2|
+|15|[신경망 연산방법](./AI_class/015/README.md)|신경망 연산방법 설명|
+|16|[신경망 구현](./AI_class/016/README.md)|신경망 파이썬으로 구현해보기|
+|17|[신경망 계산](./AI_class/017/README.md)|신경망 계산해보기|
+|18|[손실함수](./AI_class/018/README.md)|cost function 설명|
+|19|[경사하강법](./AI_class/019/README.md)|경사하강법 설명|
+|20|[Keras 모델 사용방법](./AI_class/020/README.md)|케라스 라이브러리를 이용해 딥러닝 모델 생성하는 방법 알아보기|
+|21|[Dnn 실습](./AI_class/021/Dnn.ipynb)|이제까지 배운 방법을 통해서 딥러닝 모델로 제작|
+|22|[Dnn 실습2](./AI_class/022/Dnn2.ipynb)|실습 2|
