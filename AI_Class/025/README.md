@@ -8,11 +8,11 @@ CNN은 Convolutional Neural Network의 약자로 일반 DNN에서 이미지나 �
 
 아래와 같은 손글씨 이미지가 있다고 합시다.
 
-<이미지 1>
+![025-1](https://user-images.githubusercontent.com/63298243/103630089-888ab080-4f84-11eb-8007-2cec37b262c8.png)
 
 이와 같은 이미지에 대해서 픽셀로 나눠볼 수 있습니다.
 
-<이미지 2>
+![025-2](https://user-images.githubusercontent.com/63298243/103630017-6db83c00-4f84-11eb-9df4-29d4631ae34f.png)
 
 위의 빨간 네모 한칸을 1픽셀이라 생각하고, 이 픽셀에는 (R(0~255), G(0~255), B(0~255)) 사이의 컬러가 들어가 있습니다.
 
@@ -23,7 +23,7 @@ CNN은 Convolutional Neural Network의 약자로 일반 DNN에서 이미지나 �
 그렇게 된다면 아래와 같이 숫자 "8"을 나타낼 수 있습니다.
 (흰 픽셀은 0, 나머지 픽셀은 1)
 
-<이미지 3>
+![025-3](https://user-images.githubusercontent.com/63298243/103630021-6ee96900-4f84-11eb-98a4-cad9e91a7f6c.png)
 
 **CNN에서는 이 이미지의 한 픽셀과, 주변 픽셀들의 연관관계를 유지시키며 학습시키는 것을 목표로 합니다.**
 
@@ -52,19 +52,21 @@ n*n 크기의 이미지를 뽑아내서 같은 크기의 랜덤값을 가지고 
 
 아래 같은 3 * 3 필터 3개를 준비했다고 가정합시다.
 
-<이미지 4>
+<img width="90" alt="025-4" src="https://user-images.githubusercontent.com/63298243/103630026-70b32c80-4f84-11eb-8546-45e0f0ba5912.png">
 
 그리고 아까 픽셀화를 한 숫자 8 이미지의 크기는 28 * 28입니다.
 
-<이미지 5>
+![025-5](https://user-images.githubusercontent.com/63298243/103630028-727cf000-4f84-11eb-999b-21513dc02971.png)
 
 필터 1번이 한칸씩 움직이면서 새로운 이미지를 만들게 됩니다.
 
-<이미지 6>
+![025-6](https://user-images.githubusercontent.com/63298243/103630032-7446b380-4f84-11eb-8da2-16d7dafe0384.png)
 
-~
+![025-7](https://user-images.githubusercontent.com/63298243/103630042-790b6780-4f84-11eb-956d-1644d5ffbd95.png)
 
-<이미지 9>
+![025-8](https://user-images.githubusercontent.com/63298243/103630046-7ad52b00-4f84-11eb-8fd3-382c44ecf44f.png)
+
+![025-9](https://user-images.githubusercontent.com/63298243/103630047-7b6dc180-4f84-11eb-8e4e-1780f62f1d73.png)
 
 이때 만들어지는 이미지는 (28-3+1) * (28-3+1), 즉 26 * 26 크기의 새로운 이미지를 만들게 됩니다.
 
@@ -92,18 +94,19 @@ n * n 크기의 Pooling 필터가 주어지면, n * n 크기중 가장 특성값
 가장 많이 쓰게되는 pooling 방법은 Max Pooling입니다.
 풀링된 픽셀내의 최댓값을 뽑아 내는 방법입니다.
 
-<이미지 10>
+<img width="608" alt="025-10" src="https://user-images.githubusercontent.com/63298243/103630048-7c065800-4f84-11eb-9606-71f965bc920b.png">
 
 아래처럼 숫자 8 이미지에서 2 * 2의 풀링 픽셀로 나누게된다면 파란 네모 한칸이 될 것입니다.
 
-<이미지 11>
+![025-11](https://user-images.githubusercontent.com/63298243/103630052-7d378500-4f84-11eb-9af9-51cf631096e5.png)
 
 여기서 Max Pooling을 사용한다면 파란픽셀안의 4 픽셀값중 가장 큰 픽셀하나만 뽑혀서 재구성됩니다. 28 * 28크기가 14(28/2) * 14(28/2) 크기로 줄게 되는 것입니다.
 
 #### 4. Flatten
 Convolution과 Pooling을 반복하면 이미지의 갯수는 많아지면서 크기는 점점 줄어들게 됩니다. 바로 아래의 그림처럼 말입니다.
 
-<이미지 12>
+<img width="706" alt="025-12" src="https://user-images.githubusercontent.com/63298243/103630054-7d378500-4f84-11eb-992f-3f48a181fcf7.png">
+
 
 이렇게 해서 만들어지는 Output 이미지는 특정 이미지에서 얻어낸 특성 데이터라고 보면 됩니다.
 
@@ -112,6 +115,8 @@ Convolution과 Pooling을 반복하면 이미지의 갯수는 많아지면서 �
 위의 이미지를 보면 Convolution과 Pooling을 반복하여 2차원 특성데이터들을 얻어내었고, 이를 Flatten층을 거쳐서 1차원 데이터로 변환하였습니다. 그 뒤에는 앞의 DNN과 같은 NN 층을 연결하여 1차원적인 OUTPUT를 얻어낼 수 있었습니다.
 
 이미지 하나를 수백개의 이미지로 변환하고, 이 이미지들의 특성데이터들을 종합하여 1차원 데이터화 시키는 것입니다.
+
+### CNN 과정 정리
 
 간단하게 모든 과정을 글로 설명해보자면, 고양이 사진 하나를 주었을때, 그 사진하나가 주어졌을 때.
 Convolution을 통해 다양한 털 색깔을 입힌 고양이 사진 수백장을 만들어 내고
