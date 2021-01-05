@@ -1,6 +1,6 @@
 # CNN
 
-CNN은 Convolutional Neural Network의 약자로 일반 DNN에서 이미지나 영상과 같은 데이터를 처리할 때 발생하는 문제점들을 보완한 방법입니다.
+CNN은 Convolutional Neural Network의 약자로 기존 DNN에서 이미지나 영상과 같은 데이터를 처리할 때 발생하는 문제점들을 보완한 방법입니다.
 
 ## CNN의 처리방법
 
@@ -25,10 +25,8 @@ CNN은 Convolutional Neural Network의 약자로 일반 DNN에서 이미지나 �
 
 ![025-3](https://user-images.githubusercontent.com/63298243/103630021-6ee96900-4f84-11eb-98a4-cad9e91a7f6c.png)
 
-**CNN에서는 이 이미지의 한 픽셀과, 주변 픽셀들의 연관관계를 유지시키며 학습시키는 것을 목표로 합니다.**
-
 ### 2. Convolution
-Convolution은 하나의 이미지로부터 픽셀의 연관성을 살린 여러 개의 이미지를 생성하는 것입니다.
+딥러닝에서 사용하는 Convolution은 하나의 이미지로부터 픽셀의 연관성을 살린 여러 개의 이미지를 생성하는 것입니다.
 
 n*n 크기의 이미지를 뽑아내서 같은 크기의 랜덤값을 가지고 있는 데이터와 픽셀을 곱해서 더해줍니다.
 
@@ -41,7 +39,7 @@ n*n 크기의 이미지를 뽑아내서 같은 크기의 랜덤값을 가지고 
 수학적으로 다시 정리해보겠습니다.
 
 ---
-필터 갯수 = X
+필터 갯수 = X  
 필터 크기 = Y
 
 이미지 크기 = Z * Z
@@ -108,14 +106,19 @@ Convolution과 Pooling을 반복하면 이미지의 갯수는 많아지면서 �
 
 <img width="706" alt="025-12" src="https://user-images.githubusercontent.com/63298243/103630054-7d378500-4f84-11eb-992f-3f48a181fcf7.png">
 
-
 이렇게 해서 만들어지는 Output 이미지는 특정 이미지에서 얻어낸 특성 데이터라고 보면 됩니다.
 
-이러한 2차원 특성데이터를 1차원의 데이터로 변환시키는 과정이 Flatten 과정입니다.
+이러한 2차원 특성 데이터를 1차원의 데이터로 변환시키는 과정이 Flatten 과정입니다.
+
+아래 그림의 왼쪽이 2차원 특성 데이터이고, 이를 Flatten layer를 거치면서 오른쪽과 같은 1차원의 특성 데이터로 변환됩니다.
+
+<img width="693" alt="025-13" src="https://user-images.githubusercontent.com/63298243/103673982-8b57c680-4fc1-11eb-9033-169d22a91c83.png">
 
 위의 이미지를 보면 Convolution과 Pooling을 반복하여 2차원 특성데이터들을 얻어내었고, 이를 Flatten층을 거쳐서 1차원 데이터로 변환하였습니다. 그 뒤에는 앞의 DNN과 같은 NN 층을 연결하여 1차원적인 OUTPUT를 얻어낼 수 있었습니다.
 
 이미지 하나를 수백개의 이미지로 변환하고, 이 이미지들의 특성데이터들을 종합하여 1차원 데이터화 시키는 것입니다.
+
+위의 그림과 같이 Convolution layer과 Pooling layer를 이용해 얻은 이미지들을 Dense와 같이 분류를 위한 학습 layer에 사용하기 위해서는  1차원 데이터로 바꾸어서 학습이 되어야 합니다.
 
 ### CNN 과정 정리
 
