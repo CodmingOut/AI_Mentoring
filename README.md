@@ -43,4 +43,4 @@
 |*|CNN||
 |25|[CNN 이론](./AI_Class/025/README.md)|CNN 이론에 대한 설명|
 |26|[CNN 실습](./AI_Class/026/CNN.ipynb)|mnist data를 이용한 CNN 실습|
-|27|[CNN 실습2](./AI_Class/026/CNN.ipynb)|CNN으로 개와 고양이 이미지를 분류|
+|27|[CNN 실습2](./AI_Class/026/CNN2.ipynb)|CNN으로 개와 고양이 이미지를 분류|
